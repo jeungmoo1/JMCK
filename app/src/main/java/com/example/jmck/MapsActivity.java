@@ -10,6 +10,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -57,9 +58,49 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(37.26358467659717, 127.02872491712246);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("수원시청"));
+        LatLng sydney = new LatLng(36.833043   , 127.135606);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("천안 러브토이샵"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(14.0f));
+
+        LatLng ss = new LatLng(36.818696  , 127.132886);
+        mMap.addMarker(new MarkerOptions().position(ss).title("천안 리틀킹콩"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(ss));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(14.0f));
+
+        LatLng aa = new LatLng(36.352249  , 127.354924);
+        mMap.addMarker(new MarkerOptions().position(aa).title("대전 위고토이"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(aa));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(14.0f));
+
+        LatLng bb = new LatLng(37.534520  , 126.992340);
+        mMap.addMarker(new MarkerOptions().position(bb).title("이태원 레드컨테이너"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(bb));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(14.0f));
+
+        LatLng cc = new LatLng(37.559479  , 126.925105);
+        mMap.addMarker(new MarkerOptions().position(cc).title("홍대점 레드컨테이너"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(cc));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(14.0f));
+
+        LatLng dd = new LatLng(37.539743  , 127.127789);
+        mMap.addMarker(new MarkerOptions().position(dd).title("강동 레드컨테이너"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(dd));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(14.0f));
+
+        LatLng ee = new LatLng(37.250177 , 127.634891);
+        mMap.addMarker(new MarkerOptions().position(ee).title("여주아울렛 레드컨테이너"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(ee));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(14.0f));
+
+        LatLng ff = new LatLng(35.868853 , 128.595385);
+        mMap.addMarker(new MarkerOptions().position(ff).title("대구 레드컨테이너"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(ff));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(14.0f));
+
+        LatLng gg = new LatLng(37.264834 , 127.030217);
+        mMap.addMarker(new MarkerOptions().position(gg).title("수원인계동 레드컨테이너"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(gg));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(14.0f));
 
         mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
@@ -72,6 +113,43 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
             }
         });
+
+        mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
+
+            // Use default InfoWindow frame
+            @Override
+            public View getInfoWindow(Marker arg0) {
+                return null;
+            }
+
+            // Defines the contents of the InfoWindow
+            @Override
+            public View getInfoContents(Marker arg0) {
+
+                // Getting view from the layout file info_window_layout
+                View v = getLayoutInflater().inflate(R.layout.info_window, null);
+
+//                // Getting the position from the marker
+//                LatLng latLng = arg0.getPosition();
+//
+//                // Getting reference to the TextView to set latitude
+//                TextView tvLat = (TextView) v.findViewById(R.id.tv_lat);
+//
+//                // Getting reference to the TextView to set longitude
+//                TextView tvLng = (TextView) v.findViewById(R.id.tv_lng);
+//
+//                // Setting the latitude
+//                tvLat.setText("Latitude:" + latLng.latitude);
+//
+//                // Setting the longitude
+//                tvLng.setText("Longitude:"+ latLng.longitude);
+
+                // Returning the view containing InfoWindow contents
+                return v;
+
+            }
+        });
+
     }
 
     public void onLastLocationButtonClicked(View view) {
