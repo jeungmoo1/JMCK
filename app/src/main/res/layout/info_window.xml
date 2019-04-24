@@ -9,6 +9,7 @@
         android:id="@+id/infocontent_iv_image"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:scaleType="centerCrop"
         android:layout_alignParentTop="true"
         />
     <RelativeLayout
@@ -25,6 +26,7 @@
         android:layout_below="@id/infocontent_rl_middle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="광진이의 성인용품"
         android:textStyle="bold"
         android:layout_margin="5dp"
         />
@@ -33,6 +35,7 @@
         android:layout_below="@id/infocontent_tv_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="경기도 수원시 장안구"
         android:textColor="#CCCCCC"
         android:layout_margin="5dp"
         />
@@ -41,6 +44,7 @@
         android:layout_below="@id/infocontent_tv_type"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="031)258-3154"
         android:layout_margin="5dp"
         />
     <TextView
@@ -49,5 +53,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
+        android:text="별점 ★★★★★"
         />
 </RelativeLayout>
